@@ -12,6 +12,7 @@ and open the template in the editor.
     <body>
         <h1> Students page </h1>
         <?php
+            //Create 2 student as an example
             include ('student.php');
             $students = array();
             $first = new Student();
@@ -35,11 +36,13 @@ and open the template in the editor.
             $second->add_grade(50);
             $students['a456'] = $second;
 
+            
+            //sort the collection of students
             ksort($students);
 
+                
 
-
-
+            //print out the students
             foreach ($students as $student) {
                 echo "\n".$student->toString();
             }
